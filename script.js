@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
     let conversation_id;
-    const chatbotButton = document.querySelector('.chatbot-btn');
+    // const chatbotButton = document.querySelector('.chatbot-btn');
     const chatPopup = document.querySelector('.chat-popup');
     // const closeChatButton = document.querySelector('.close-chat');
     const sendButton = document.getElementById('send-btn');
@@ -8,11 +8,17 @@ document.addEventListener('DOMContentLoaded', function () {
     const chatMessages = document.querySelector('.chat-messages');
     const chatBody = document.querySelector('.chat-body')
     chatPopup.classList.toggle('active');
+    const message = 'Hi'
+
+    if (message) {
+        userInput.value = ''; // Clear input
+        botResponse(message).then(); // Trigger bot response
+    }
 
     // Toggle chat popup visibility.chat-messages
-    chatbotButton.addEventListener('click', function () {
-        chatPopup.classList.toggle('active');
-    });
+    // chatbotButton.addEventListener('click', function () {
+    //     chatPopup.classList.toggle('active');
+    // });
 
     // closeChatButton.addEventListener('click', function () {
     //     chatPopup.classList.remove('active');
@@ -29,6 +35,8 @@ document.addEventListener('DOMContentLoaded', function () {
         document.querySelectorAll(".chat-messages a").forEach(function (a) {
             a.setAttribute('target', '_blank');
         })
+
+        userInput?.focus();
     }
 
     function showTypingIndicator() {
@@ -81,7 +89,7 @@ document.addEventListener('DOMContentLoaded', function () {
         if (userMessage) {
             addMessage('user', userMessage);
             userInput.value = ''; // Clear input
-            botResponse(userMessage); // Trigger bot response
+            botResponse(userMessage).then(); // Trigger bot response
         }
     });
 
