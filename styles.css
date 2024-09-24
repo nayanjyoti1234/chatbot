@@ -1,0 +1,236 @@
+/* General reset for padding and margins */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Chatbot Button Style */
+.chatbot-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+
+.chatbot-btn {
+    background-color: #007bff;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+.chatbot-btn:hover {
+    background-color: #0056b3;
+}
+
+.chatbot-btn img {
+    width: 30px;
+    height: 30px;
+}
+
+/* Chat Popup Style */
+.chat-popup {
+    position: fixed;
+    bottom: 90px;
+    right: 20px;
+    width: 70%;
+    max-width: 500px;
+    max-height: 500px;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+    display: none;
+    flex-direction: column;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+@media screen and (max-width: 1000px) {
+    .chat-popup {
+        position: fixed;
+        bottom: 90px;
+        right: 20px;
+        width: 90%;
+        max-width: 1000px;
+        max-height: 85%;
+        background-color: white;
+        border-radius: 15px;
+        box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+        display: none;
+        flex-direction: column;
+        overflow: hidden;
+        transition: all 0.3s ease;
+    }
+}
+
+
+/* Chat Header */
+.chat-header {
+    background-color: #007bff;
+    color: white;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.chat-header h3 {
+    font-size: 18px;
+    margin: 0;
+}
+
+.close-chat {
+    cursor: pointer;
+    font-size: 24px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.close-chat:hover {
+    color: #f0f0f0;
+}
+
+/* Chat Body */
+.chat-body {
+    padding: 10px;
+    overflow-y: auto;
+    flex: 1;
+}
+
+.chat-messages {
+    display: flex;
+    flex-direction: column;
+}
+
+.message {
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 10px;
+    max-width: 80%;
+}
+
+.message.user {
+    background-color: #007bff;
+    color: white;
+    align-self: flex-end;
+}
+
+.message.bot {
+    background-color: #f1f1f1;
+    color: black;
+    align-self: flex-start;
+}
+
+/* Chat Footer */
+.chat-footer {
+    display: flex;
+    padding: 10px;
+    background-color: #f1f1f1;
+    align-items: center;
+}
+
+.chat-footer input {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    margin-right: 10px;
+    background-color: #eaeaea;
+}
+
+.chat-footer button {
+    background-color: #007bff;
+    border: none;
+    border-radius: 50%;
+    padding: 10px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.chat-footer button img {
+    width: 24px;
+    height: 24px;
+}
+
+/* Scroll styling */
+.chat-body::-webkit-scrollbar {
+    width: 5px;
+}
+
+.chat-body::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius: 10px;
+}
+
+/* Smooth slide in animation */
+.chat-popup.active {
+    display: flex;
+    animation: slideUp 0.4s ease;
+}
+
+@keyframes slideUp {
+    0% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.typing-indicator {
+    background-color: #f1f1f1;
+    border-radius: 8px;
+    height: 30px;
+    width: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    margin: 0 3px;
+    background-color: #aaa;
+    border-radius: 50%;
+    animation: blink 1.4s infinite both;
+}
+
+.dot:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.dot:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.dot:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes blink {
+    0% {
+        opacity: 0.2;
+    }
+    20% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0.2;
+    }
+}
