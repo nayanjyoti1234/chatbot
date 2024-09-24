@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function () {
     let conversation_id;
     const chatbotButton = document.querySelector('.chatbot-btn');
     const chatPopup = document.querySelector('.chat-popup');
-    const closeChatButton = document.querySelector('.close-chat');
+    // const closeChatButton = document.querySelector('.close-chat');
     const sendButton = document.getElementById('send-btn');
     const userInput = document.getElementById('user-input');
     const chatMessages = document.querySelector('.chat-messages');
@@ -14,9 +14,9 @@ document.addEventListener('DOMContentLoaded', function () {
         chatPopup.classList.toggle('active');
     });
 
-    closeChatButton.addEventListener('click', function () {
-        chatPopup.classList.remove('active');
-    });
+    // closeChatButton.addEventListener('click', function () {
+    //     chatPopup.classList.remove('active');
+    // });
 
     // Function to add message to chat
     function addMessage(sender, message) {

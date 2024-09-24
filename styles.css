@@ -41,6 +41,7 @@
     bottom: 90px;
     right: 20px;
     width: 70%;
+    min-height: 300px;
     max-width: 500px;
     max-height: 500px;
     background-color: white;
@@ -73,11 +74,11 @@
 
 /* Chat Header */
 .chat-header {
-    background-color: #007bff;
-    color: white;
+    background-color: #FAE6C5;
+    color: black;
     padding: 15px;
     display: flex;
-    justify-content: space-between;
+    /*justify-content: space-between;*/
     align-items: center;
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
@@ -86,6 +87,19 @@
 .chat-header h3 {
     font-size: 18px;
     margin: 0;
+    padding-left: 20px;
+}
+
+.chat-org-logo{
+    margin-left: 10px;
+}
+
+.chat-call-logo{
+    margin-left: 8px;
+}
+
+.chat-message-logo{
+    margin-left: 8px;
 }
 
 .close-chat {
@@ -119,40 +133,37 @@
 }
 
 .message.user {
-    background-color: #007bff;
+    background-color: #071E2F;
     color: white;
     align-self: flex-end;
+    border-radius: 10px 10px 0 10px;
 }
 
 .message.bot {
-    background-color: #f1f1f1;
-    color: black;
+    background-color: #f5f5f5;
+    color: #001E45;
     align-self: flex-start;
 }
 
 /* Chat Footer */
 .chat-footer {
     display: flex;
-    padding: 10px;
+    padding: 6px 12px;
     background-color: #f1f1f1;
     align-items: center;
+    border-top: 1px solid #ECEBE9;
 }
 
 .chat-footer input {
     flex: 1;
     padding: 10px;
     border: none;
-    border-radius: 20px;
     outline: none;
-    margin-right: 10px;
-    background-color: #eaeaea;
+    background-color: #f1f1f1;
 }
 
 .chat-footer button {
-    background-color: #007bff;
     border: none;
-    border-radius: 50%;
-    padding: 10px;
     cursor: pointer;
     display: flex;
     justify-content: center;
@@ -160,8 +171,8 @@
 }
 
 .chat-footer button img {
-    width: 24px;
-    height: 24px;
+    width: 15px;
+    height: 15px;
 }
 
 /* Scroll styling */
@@ -193,7 +204,7 @@
 
 .typing-indicator {
     background-color: #f1f1f1;
-    border-radius: 8px;
+    border-radius: 8px 8px 0 8px;
     height: 30px;
     width: 50px;
     display: flex;
