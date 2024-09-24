@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const chatBody = document.querySelector('.chat-body')
     chatPopup.classList.toggle('active');
 
-    // Toggle chat popup visibility
+    // Toggle chat popup visibility.chat-messages
     chatbotButton.addEventListener('click', function () {
         chatPopup.classList.toggle('active');
     });
@@ -25,6 +25,10 @@ document.addEventListener('DOMContentLoaded', function () {
         messageElement.innerHTML = message;
         chatMessages.appendChild(messageElement);
         chatBody.scrollTop = chatBody.scrollHeight;
+
+        document.querySelectorAll(".chat-messages a").forEach(function (a) {
+            a.setAttribute('target', '_blank');
+        })
     }
 
     function showTypingIndicator() {
