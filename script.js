@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const userInput = document.getElementById('user-input');
     const chatMessages = document.querySelector('.chat-messages');
     const chatBody = document.querySelector('.chat-body')
+    chatPopup.classList.toggle('active');
 
     // Toggle chat popup visibility
     chatbotButton.addEventListener('click', function () {
@@ -21,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function () {
     function addMessage(sender, message) {
         const messageElement = document.createElement('div');
         messageElement.classList.add('message', sender);
-        messageElement.innerText = message;
+        messageElement.innerHTML = message;
         chatMessages.appendChild(messageElement);
         chatBody.scrollTop = chatBody.scrollHeight;
     }
@@ -65,7 +66,8 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         setTimeout(() => {
-            addMessage('bot', response_message);
+            const htmlString = marked.parse(response_message);
+            addMessage('bot', htmlString);
         }, 1000); // Simulate delay
     }
 
