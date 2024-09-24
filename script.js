@@ -27,12 +27,14 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function showTypingIndicator() {
+        userInput.disabled = true;
         const typingIndicator = document.getElementById("typing");
         typingIndicator.style.display = "flex";
         chatBody.scrollTop = chatBody.scrollHeight;
     }
 
     function hideTypingIndicator() {
+        userInput.disabled = false;
         const typingIndicator = document.getElementById("typing");
         typingIndicator.style.display = "none";
     }
